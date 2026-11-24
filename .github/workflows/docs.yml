@@ -11,6 +11,7 @@ on:
       - 'src/typer_scion/**'
       - 'pyproject.toml'
       - 'uv.lock'
+      - '.github/workflows/docs.yml'
 
 jobs:
   docs:
