@@ -16,6 +16,8 @@ nav = [
 [project.theme]
 variant = "classic"
 language = "en"
+logo = "static/typer-scion-icon.png"
+favicon = "static/typer-scion-icon.png"
 features = [
     "navigation.expand",
     "navigation.footer",
