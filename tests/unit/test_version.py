@@ -23,9 +23,7 @@ def test_get_version__uses_pyproject():
         mock.patch(
             "typer_scion.version.get_version_from_metadata", side_effect=PackageNotFoundError
         ) as mocked_metadata,
-        mock.patch(
-            "typer_scion.version.get_version_from_pyproject", return_value=expected_version
-        ) as mocked_pyproject,
+        mock.patch("typer_scion.version.get_version_from_pyproject", return_value=expected_version) as mocked_pyproject,
     ):
         computed_version = get_version()
         assert computed_version == expected_version
@@ -37,12 +35,8 @@ def test_get_version__uses_pyproject():
 def test_get_version__uses_metadata():
     expected_version = "1.2.3"
     with (
-        mock.patch(
-            "typer_scion.version.get_version_from_metadata", return_value=expected_version
-        ) as mocked_metadata,
-        mock.patch(
-            "typer_scion.version.get_version_from_pyproject", side_effect=FileNotFoundError
-        ) as mocked_pyproject,
+        mock.patch("typer_scion.version.get_version_from_metadata", return_value=expected_version) as mocked_metadata,
+        mock.patch("typer_scion.version.get_version_from_pyproject", side_effect=FileNotFoundError) as mocked_pyproject,
     ):
         computed_version = get_version()
         assert computed_version == expected_version
@@ -57,9 +51,7 @@ def test_get_version__returns_unknown_if_both_fail():
         mock.patch(
             "typer_scion.version.get_version_from_metadata", side_effect=PackageNotFoundError
         ) as mocked_metadata,
-        mock.patch(
-            "typer_scion.version.get_version_from_pyproject", side_effect=FileNotFoundError
-        ) as mocked_pyproject,
+        mock.patch("typer_scion.version.get_version_from_pyproject", side_effect=FileNotFoundError) as mocked_pyproject,
     ):
         computed_version = get_version()
         assert computed_version == expected_version

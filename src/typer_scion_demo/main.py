@@ -8,7 +8,11 @@ import typer_scion_demo
 
 
 def main():
-    Roadshow(typer_scion_demo, title="typer-scion").run()
+    Roadshow(
+        typer_scion_demo,
+        title="typer-scion",
+        feature_order=["receiving", "values", "nesting", "errors"],
+    ).run()
 
 
 if __name__ == "__main__":

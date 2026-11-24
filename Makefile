@@ -48,6 +48,12 @@ demo: demo/run  ## Shortcut for demo/run
 demo/run:  ## Run the demo application
 	@uv run typer-scion-demo
 
+demo/help:  ## Show the demo application's help
+	@uv run typer-scion-demo --help
+
+demo/%:  ## Run one demo feature (dashes stand in for spaces), e.g. demo/nesting
+	@uv run typer-scion-demo --feature "$(subst -, ,$*)"
+
 demo/debug:  ## Run the demo application in debug mode
 	@uv run debugpy --listen localhost:5678 --wait-for-client typer-scion-demo
 
@@ -92,7 +98,7 @@ PACKAGE_TARGET:=src/typer_scion
 SHELL:=/bin/bash
 .PHONY: qa qa/test qa/test/unit qa/test/integration qa/types qa/lint qa/full qa/format \
 	docs docs/build docs/serve \
-	demo demo/run demo/debug \
+	demo demo/run demo/help demo/debug \
 	publish \
 	hooks clean help
 

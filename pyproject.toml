@@ -9,7 +9,10 @@ readme = "README.md"
 license-files = ["LICENSE.md"]
 
 requires-python = ">=3.12, ~=3.15"
-dependencies = []
+dependencies = [
+    "py-buzz>=9.0.1",
+    "typer>=0.15.4",
+]
 
 
 [project.urls]
@@ -19,7 +22,7 @@ changelog = "https://github.com/dusktreader/typer-scion/blob/main/CHANGELOG.md"
 
 
 [project.optional-dependencies]
-demo = [ "roadshow>=0.1.2" ]
+demo = [ "roadshow>=0.3.0" ]
 
 
 

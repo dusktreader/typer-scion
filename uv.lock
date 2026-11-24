@@ -759,16 +759,16 @@ wheels = [
 
 [[package]]
 name = "roadshow"
-version = "0.2.1"
+version = "0.3.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "py-buzz" },
     { name = "rich" },
     { name = "typer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/04/d6/700e11d43a56fe50d30a7eb6881062f27ae120a5401617ac0d46c683ab68/roadshow-0.2.1.tar.gz", hash = "sha256:7390e6ef1f5ff45636a544215f26b0d2f8a7dec20be3b711f1d2cd7400b30cbf", size = 10620, upload-time = "2026-11-17T00:55:10.605Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/00/b7/ec35dfda1249ee35be3de189e79af8878b738ae45e53567f60b3c1875187/roadshow-0.3.0.tar.gz", hash = "sha256:f2c3d066f0c2006c31c5edb36286596fc18f383b8d6b623cce1a5cb0014c9ec9", size = 11131, upload-time = "2026-11-24T00:21:05.806Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/31/a8/30035e300032f2589a5b19061f418f08c61a1e9dee7e8e0eeb00e68eccf8/roadshow-0.2.1-py3-none-any.whl", hash = "sha256:aa264e4a6b956811d3c537acd936504c7847b50d66f1a7518beb24706bdc009e", size = 13605, upload-time = "2026-11-17T00:55:09.793Z" },
+    { url = "https://files.pythonhosted.org/packages/b8/c4/8da9eb3ee7b0a78810eea497192c2451e041d8b37b7b0c656f8fcd5d74b7/roadshow-0.3.0-py3-none-any.whl", hash = "sha256:b36b3c10a779ed77c5cf5be1ca303853ab20c0059c84e5b99c047960a1bb3018", size = 14381, upload-time = "2026-11-24T00:21:04.882Z" },
 ]
 
 [[package]]
@@ -909,6 +909,10 @@ wheels = [
 name = "typer-scion"
 version = "0.1.0"
 source = { editable = "." }
+dependencies = [
+    { name = "py-buzz" },
+    { name = "typer" },
+]
 
 [package.optional-dependencies]
 demo = [
@@ -934,7 +938,11 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "roadshow", marker = "extra == 'demo'", specifier = ">=0.1.2" }]
+requires-dist = [
+    { name = "py-buzz", specifier = ">=9.0.1" },
+    { name = "roadshow", marker = "extra == 'demo'", specifier = ">=0.3.0" },
+    { name = "typer", specifier = ">=0.15.4" },
+]
 provides-extras = ["demo"]
 
 [package.metadata.requires-dev]
